@@ -1,0 +1,43 @@
+mysql> INSERT INTO school (name, country, capacity) 
+    -> VALUES ('Beauxbatons Academy of Magic', 'France', 550),
+    -> ('Hogwarts School of Witchcraft and Wizardry', 'United Kingdom', 400) ,
+    -> ('Castelobruxo', 'Brazil', 380), 
+    -> ('Durmstrang Institute', 'Norway', 570),
+    -> ('Ilvermorny School of Witchcraft and Wizardry','USA ', 300),
+    -> ('Koldovstoretz' ,' Russia ', 125),
+    -> ('Mahoutokoro School of Magic' ,'Japan ' , 800),
+    -> ('agadou School of Magic', 'Uganda ' , 350);
+Query OK, 8 rows affected (0.01 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE school
+    -> SET capacity=550
+    -> WHERE id=2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update school
+    -> set capacity=400
+    -> where id=4;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> DELETE FROM school
+    -> WHERE id=3;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select name, country,capacity from school;
++----------------------------------------------+----------------+----------+
+| name                                         | country        | capacity |
++----------------------------------------------+----------------+----------+
+| Beauxbatons Academy of Magic                 | France         |      550 |
+| Hogwarts School of Witchcraft and Wizardry   | United Kingdom |      550 |
+| Durmstrang Institute                         | Norway         |      400 |
+| Ilvermorny School of Witchcraft and Wizardry | USA            |      300 |
+| Koldovstoretz                                |  Russia        |      125 |
+| Mahoutokoro School of Magic                  | Japan          |      800 |
+| agadou School of Magic                       | Uganda         |      350 |
++----------------------------------------------+----------------+----------+
+7 rows in set (0.00 sec)
+
+mysql> 
